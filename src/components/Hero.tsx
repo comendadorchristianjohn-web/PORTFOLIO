@@ -27,7 +27,7 @@ export default function Hero() {
           </div>
 
           <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white mb-4 leading-none">
-            Hi, I'm <span className="text-gradient-silver">Christian John</span>
+            Hi!, I'm <span className="text-gradient-silver">CJ</span>
           </h1>
 
           <h2 className="text-xl sm:text-2xl font-medium tracking-wide text-primary mb-6 uppercase">
