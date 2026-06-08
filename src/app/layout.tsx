@@ -15,13 +15,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Comendador | Full Stack Software Engineer",
-  description: "Professional portfolio of Comendador, a Full Stack Software Engineer specializing in Next.js, React, TypeScript, and clean modern web architectures.",
-  keywords: ["Comendador", "Software Engineer", "Full Stack Developer", "Next.js Portfolio", "React Developer", "TypeScript"],
+  title: "Comendador | Computer Engineer",
+  description: "Professional portfolio of Christian John Comendador, a Computer Engineering graduate specializing in IoT, embedded systems, networks, and technical design.",
+  keywords: ["Comendador", "Christian John Comendador", "Computer Engineer", "Computer Engineering", "IoT", "Embedded Systems", "Next.js Portfolio"],
   authors: [{ name: "Comendador" }],
   openGraph: {
-    title: "Comendador | Full Stack Software Engineer",
-    description: "Professional software engineering portfolio showing skills, projects, and contact info.",
+    title: "Comendador | Computer Engineer",
+    description: "Professional Computer Engineering portfolio showing skills, projects, and contact info.",
     type: "website",
     locale: "en_US",
   },
