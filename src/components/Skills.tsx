@@ -84,7 +84,7 @@ export default function Skills() {
         </div>
 
         {/* Extra details strip */}
-        <div className="mt-12 p-6 glass rounded-2xl border border-white/5 flex flex-col md:flex-row items-center gap-6 justify-between">
+        <div className="mt-12 p-6 glass rounded-2xl border border-white/5 flex items-center gap-6">
           <div className="flex items-center gap-4">
             <div className="p-3 rounded-xl bg-secondary/10 text-secondary hidden md:block">
               <Cpu className="w-6 h-6 animate-pulse" />
@@ -93,10 +93,6 @@ export default function Skills() {
               <h4 className="font-semibold text-white text-base">Academic Excellence</h4>
               <p className="text-sm text-zinc-400">Bachelor of Science in Computer Engineering. Multi-year Dean's Lister (2022, 2023).</p>
             </div>
-          </div>
-          <div className="text-xs font-semibold px-4 py-2 rounded-lg bg-white/5 border border-white/10 text-zinc-300 flex items-center gap-2">
-            <Terminal className="w-4 h-4 text-primary" />
-            <span>std::cout &lt;&lt; "COMENDADOR";</span>
           </div>
         </div>
       </div>
