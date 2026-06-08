@@ -21,27 +21,23 @@ export default function Hero() {
         {/* Left Side Content */}
         <div className="lg:col-span-6 flex flex-col items-start text-left">
 
-          <h1 className="text-5xl sm:text-7xl font-light tracking-tight text-white mb-2 leading-none">
-            Christian John
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/5 border border-white/10 text-zinc-300 text-[10px] font-semibold uppercase tracking-wider mb-6">
+            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+            Computer Engineer
+          </div>
+
+          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white mb-4 leading-none">
+            Hi, I'm <span className="text-gradient-silver">Christian John</span>
           </h1>
 
-          <h2 className="text-2xl sm:text-3xl font-medium tracking-wide text-primary mb-6">
-            Computer Engineering
+          <h2 className="text-xl sm:text-2xl font-medium tracking-wide text-primary mb-6 uppercase">
+            Computer Engineering Graduate & Developer
           </h2>
 
           <p className="text-zinc-400 text-sm sm:text-base max-w-lg leading-relaxed mb-8 font-light">
-            I'm a motivated and detail-oriented Computer Engineering graduate with
-            foundational expertise in electronics, embedded systems, networks, and troubleshooting.
-            I have hands-on experience in hardware integration and CAD layouts.
+            I specialize in intelligent hardware integrations, responsive IoT systems, and CAD layouts. 
+            Blending technical engineering skills with active troubleshooting and development.
           </p>
-
-          {/* Pagination dots */}
-          <div className="flex gap-2.5 mb-8">
-            <span className="w-2.5 h-2.5 rounded-full bg-white transition-all duration-300" title="Home" />
-            <span className="w-2.5 h-2.5 rounded-full bg-white/20 hover:bg-white/50 transition-all duration-300 cursor-pointer" title="Skills" onClick={() => window.location.href = "#skills"} />
-            <span className="w-2.5 h-2.5 rounded-full bg-white/20 hover:bg-white/50 transition-all duration-300 cursor-pointer" title="Experience" onClick={() => window.location.href = "#experience"} />
-            <span className="w-2.5 h-2.5 rounded-full bg-white/20 hover:bg-white/50 transition-all duration-300 cursor-pointer" title="Projects" onClick={() => window.location.href = "#projects"} />
-          </div>
 
           {/* Action buttons */}
           <div className="flex flex-wrap gap-4 w-full sm:w-auto">
