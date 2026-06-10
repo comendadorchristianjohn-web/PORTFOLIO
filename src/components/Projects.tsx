@@ -13,7 +13,7 @@ export default function Projects() {
       github: "https://github.com/comendadorchristianjohn-web",
       demo: "https://expense-tracker-six-delta-58.vercel.app",
       imageClass: "bg-gradient-to-br from-[#0f172a] to-[#1e293b]",
-      image: "",
+      image: "/expense_tracker.png",
       featured: true,
     },
     {
@@ -74,11 +74,14 @@ export default function Projects() {
           {allProjects.map((project, index) => {
             const isLastOdd = index === allProjects.length - 1 && allProjects.length % 2 !== 0;
             return (
-              <div
+              <a
+                href={project.demo}
+                target="_blank"
+                rel="noopener noreferrer"
                 key={index}
                 className={`glass glass-interactive rounded-2xl overflow-hidden flex flex-col group border border-white/5 w-full ${
                   isLastOdd ? "md:col-span-2 md:mx-auto md:w-[calc(50%-16px)]" : ""
-                }`}
+                } cursor-pointer block`}
               >
                 {/* Project Card Image */}
                 <div className={`h-52 w-full relative overflow-hidden flex items-center justify-center ${project.imageClass || ""}`}>
@@ -133,7 +136,7 @@ export default function Projects() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </a>
             );
           })}
         </div>
