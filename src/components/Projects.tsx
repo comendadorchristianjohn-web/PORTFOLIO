@@ -20,8 +20,8 @@ export default function Projects() {
       title: "IoT Automated Pet Feeding Dispenser",
       description: "Designed and developed an automated feeding dispenser system for rescued dogs and cats using ESP32 and Raspberry Pi. Streamlines animal shelter caretaking processes and ensures scheduled feeding efficiency.",
       tech: ["ESP32", "Raspberry Pi", "IoT", "C++", "Hardware Integration"],
-      github: "https://github.com/comendadorchristianjohn-web",
-      demo: "https://github.com/comendadorchristianjohn-web",
+      github: "",
+      demo: "",
       imageClass: "bg-gradient-to-br from-[#1c1c1c] to-[#383838]",
       image: "/pet_feeder.png",
       featured: true,
@@ -30,8 +30,8 @@ export default function Projects() {
       title: "AutoCAD Process Engineering layouts",
       description: "Drafted process and electrical components conversion files to AutoCAD formats for industrial systems, ensuring 2D layouts conform to Yuanshan Electronics standards.",
       tech: ["AutoCAD", "CAD Drafting", "2D Layout", "Process Documentation"],
-      github: "https://github.com/comendadorchristianjohn-web",
-      demo: "https://github.com/comendadorchristianjohn-web",
+      github: "",
+      demo: "",
       image: "/autocad.png",
       featured: true,
     },
@@ -39,8 +39,8 @@ export default function Projects() {
       title: "PC Part Configurator & Compatibility Engine",
       description: "A program developed in C++ to recommend computer parts and hardware configurations. Automates component alignment checks based on budget and user requirements.",
       tech: ["C++", "Data Processing", "Hardware Compatibility"],
-      github: "https://github.com/comendadorchristianjohn-web",
-      demo: "https://github.com/comendadorchristianjohn-web",
+      github: "",
+      demo: "",
       imageClass: "bg-gradient-to-br from-[#2e2e2e] to-[#4f4f4f]",
       image: "/pc_configurator.jpg",
       featured: false,
@@ -73,15 +73,16 @@ export default function Projects() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {allProjects.map((project, index) => {
             const isLastOdd = index === allProjects.length - 1 && allProjects.length % 2 !== 0;
+            const CardWrapper = project.demo ? "a" : "div";
             return (
-              <a
-                href={project.demo}
-                target="_blank"
-                rel="noopener noreferrer"
+              <CardWrapper
+                href={project.demo ? project.demo : undefined}
+                target={project.demo ? "_blank" : undefined}
+                rel={project.demo ? "noopener noreferrer" : undefined}
                 key={index}
                 className={`glass glass-interactive rounded-2xl overflow-hidden flex flex-col group border border-white/5 w-full ${
                   isLastOdd ? "md:col-span-2 md:mx-auto md:w-[calc(50%-16px)]" : ""
-                } cursor-pointer block`}
+                } block ${project.demo ? "cursor-pointer" : ""}`}
               >
                 {/* Project Card Image */}
                 <div className={`h-52 w-full relative overflow-hidden flex items-center justify-center ${project.imageClass || ""}`}>
@@ -136,7 +137,7 @@ export default function Projects() {
                     </div>
                   </div>
                 </div>
-              </a>
+              </CardWrapper>
             );
           })}
         </div>
