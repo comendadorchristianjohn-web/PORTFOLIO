@@ -1,6 +1,7 @@
 "use client";
 
 import { Briefcase, GraduationCap, Award, BookOpen } from "lucide-react";
+import SplitText from "./SplitText";
 
 export default function Experience() {
   const workExp = [
@@ -66,13 +67,19 @@ export default function Experience() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         
         {/* Section Heading */}
-        <div className="text-center md:text-left mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
-            Experience & <span className="text-gradient-silver">Education</span>
+        <div className="text-center md:text-left mb-16 flex flex-col md:items-start items-center">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 flex gap-2 flex-wrap justify-center md:justify-start">
+            <SplitText text="Experience &" tag="span" /> <SplitText text="Education" className="text-gradient-silver" tag="span" delay={60} />
           </h2>
-          <p className="text-zinc-400 max-w-lg">
-            My professional internships, academic history, and technical achievements.
-          </p>
+          <div className="text-zinc-400 max-w-lg md:text-left text-center">
+            <SplitText 
+              text="My professional internships, academic history, and technical achievements." 
+              tag="p" 
+              splitType="words" 
+              delay={30} 
+              textAlign="inherit"
+            />
+          </div>
         </div>
 
         {/* Timeline Grid */}

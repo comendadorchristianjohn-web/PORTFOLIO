@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ExternalLink, Sparkles } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
+import SplitText from "./SplitText";
 
 export default function Projects() {
   const allProjects = [
@@ -59,13 +60,19 @@ export default function Projects() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
         {/* Section Header */}
         <div className="text-center md:text-left mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
-          <div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
-              Featured <span className="text-gradient-silver">Projects</span>
+          <div className="flex flex-col md:items-start items-center">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 flex gap-2 flex-wrap">
+              <SplitText text="Featured" tag="span" /> <SplitText text="Projects" className="text-gradient-silver" tag="span" delay={60} />
             </h2>
-            <p className="text-zinc-400 max-w-lg">
-              A curated selection of applications and platforms I have architected, designed, and developed from the ground up.
-            </p>
+            <div className="text-zinc-400 max-w-lg md:text-left text-center">
+              <SplitText 
+                text="A curated selection of applications and platforms I have architected, designed, and developed from the ground up." 
+                tag="p" 
+                splitType="words" 
+                delay={30} 
+                textAlign="inherit"
+              />
+            </div>
           </div>
         </div>
 
