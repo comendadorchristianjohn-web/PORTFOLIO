@@ -22,12 +22,15 @@ export async function POST(req: Request) {
         lastMessage.includes("pet") || 
         lastMessage.includes("autocad") || 
         lastMessage.includes("layout") ||
-        lastMessage.includes("pc part")
+        lastMessage.includes("pc part") ||
+        lastMessage.includes("expense") ||
+        lastMessage.includes("tracker")
       ) {
         reply = "Christian John has completed some great technical projects:\n\n" +
-          "1. **IoT Automated Pet Feeding Dispenser**: A smart dispenser system for animal shelters built using ESP32, Raspberry Pi, and C++ to automate scheduled pet feedings.\n" +
-          "2. **AutoCAD Process Engineering Layouts**: Drafted electrical and process layout components in 2D to Yuanshan Electronics standards.\n" +
-          "3. **PC Part Configurator & Compatibility Engine**: A C++ console program that checks hardware compatibility and suggests components based on budget.";
+          "1. **Expense Tracker**: A web-based application designed to help users monitor financial transactions and manage budgets efficiently.\n" +
+          "2. **IoT Automated Pet Feeding Dispenser**: A smart dispenser system for animal shelters built using ESP32, Raspberry Pi, and C++ to automate scheduled pet feedings.\n" +
+          "3. **AutoCAD Process Engineering Layouts**: Drafted electrical and process layout components in 2D to Yuanshan Electronics standards.\n" +
+          "4. **PC Part Configurator & Compatibility Engine**: A C++ console program that checks hardware compatibility and suggests components based on budget.";
       } else if (
         lastMessage.includes("contact") || 
         lastMessage.includes("email") || 
@@ -114,9 +117,10 @@ Here is Christian's profile:
      - Assisted clients and advised on compatibility of computer parts and configurations matching their budget.
      - Updated sales and inventory tracking records to ensure correct transaction documentation.
 - **Projects**:
-  1. IoT Automated Pet Feeding Dispenser: An automated feeding dispenser system for rescued dogs and cats using ESP32, Raspberry Pi, IoT, C++, and hardware integration. Streamlines animal shelter caretaking.
-  2. AutoCAD Process Engineering layouts: Drafted process and electrical components conversion files to AutoCAD formats for industrial systems, ensuring 2D layouts conform to Yuanshan Electronics standards.
-  3. PC Part Configurator & Compatibility Engine: Program developed in C++ to recommend computer parts and hardware configurations. Automates component alignment checks based on budget and user requirements.
+  1. Expense Tracker: A web-based expense tracking application designed to help users monitor their financial transactions and manage personal budgets efficiently.
+  2. IoT Automated Pet Feeding Dispenser: An automated feeding dispenser system for rescued dogs and cats using ESP32, Raspberry Pi, IoT, C++, and hardware integration. Streamlines animal shelter caretaking.
+  3. AutoCAD Process Engineering layouts: Drafted process and electrical components conversion files to AutoCAD formats for industrial systems, ensuring 2D layouts conform to Yuanshan Electronics standards.
+  4. PC Part Configurator & Compatibility Engine: Program developed in C++ to recommend computer parts and hardware configurations. Automates component alignment checks based on budget and user requirements.
 - **Technical Skills**:
   - Electronics & IoT: ESP32, Raspberry Pi, Internet of Things, Embedded Systems, Hardware Integration, System Connectivity.
   - AutoCAD & Drafting: AutoCAD Skills, Computer-Aided Design, Technical Drafting, 2D Layout, Documentation Standards.
