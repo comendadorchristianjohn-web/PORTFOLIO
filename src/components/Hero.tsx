@@ -2,7 +2,6 @@
 
 import { ChevronDown } from "lucide-react";
 import Lanyard from "./Lanyard";
-import TextType from "./TextType";
 
 export default function Hero() {
   return (
@@ -27,24 +26,12 @@ export default function Hero() {
             Computer Engineer
           </div>
 
-          <TextType 
-            text="Hi!, I'm CJ" 
-            as="h1" 
-            className="text-5xl sm:text-7xl font-bold tracking-tight text-white mb-4 leading-none" 
-            loop={false}
-          />
-
-          <TextType 
-            text="Computer Engineering Graduate & Developer" 
-            as="h2" 
-            className="text-xl sm:text-2xl font-medium tracking-wide text-primary mb-6 uppercase" 
-            initialDelay={1500}
-            loop={false}
-          />
+          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white mb-4 leading-none">
+            Hi!, I'm <span className="text-gradient-silver">CJ</span>
+          </h1>
 
           <p className="text-zinc-400 text-sm sm:text-base max-w-lg leading-relaxed mb-8 font-light">
-            I specialize in intelligent hardware integrations, responsive IoT systems, and CAD layouts. 
-            Blending technical engineering skills with active troubleshooting and development.
+            <span className="text-primary font-medium tracking-wide uppercase">Computer Engineering Graduate & Developer</span> — I specialize in intelligent hardware integrations, responsive IoT systems, and CAD layouts. Blending technical engineering skills with active troubleshooting and development.
           </p>
 
           {/* Action buttons */}
