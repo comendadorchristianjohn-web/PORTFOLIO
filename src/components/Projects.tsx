@@ -3,7 +3,6 @@
 import { useState } from "react";
 import { ExternalLink, Sparkles } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
-import SplitText from "./SplitText";
 import AnimatedContent from "./AnimatedContent";
 
 export default function Projects() {
@@ -59,26 +58,21 @@ export default function Projects() {
       <div className="star-glow animate-star-blink absolute bottom-1/4 right-[25%] w-1 h-1" style={{ animationDelay: "1.4s" }} />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <AnimatedContent distance={50} direction="vertical" reverse={false} duration={0.8} delay={0.2}>
         {/* Section Header */}
+        <AnimatedContent distance={50} direction="vertical" duration={0.8}>
         <div className="text-center md:text-left mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="flex flex-col md:items-start items-center">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 flex gap-2 flex-wrap">
-              <SplitText text="Featured" tag="span" /> <SplitText text="Projects" className="text-gradient-silver" tag="span" delay={60} />
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+              Featured <span className="text-gradient-silver">Projects</span>
             </h2>
-            <div className="text-zinc-400 max-w-lg md:text-left text-center">
-              <SplitText 
-                text="A curated selection of applications and platforms I have architected, designed, and developed from the ground up." 
-                tag="p" 
-                splitType="words" 
-                delay={30} 
-                textAlign="inherit"
-              />
-            </div>
+            <p className="text-zinc-400 max-w-lg md:text-left text-center">
+              A curated selection of applications and platforms I have architected, designed, and developed from the ground up.
+            </p>
           </div>
         </div>
+        </AnimatedContent>
 
-        {/* Projects Grid */}
+        <AnimatedContent distance={50} direction="vertical" duration={0.8} delay={0.3}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {allProjects.map((project, index) => {
             const isLastOdd = index === allProjects.length - 1 && allProjects.length % 2 !== 0;

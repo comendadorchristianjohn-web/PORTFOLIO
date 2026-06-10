@@ -1,7 +1,6 @@
 "use client";
 
 import { Briefcase, GraduationCap, Award, BookOpen } from "lucide-react";
-import SplitText from "./SplitText";
 import AnimatedContent from "./AnimatedContent";
 
 export default function Experience() {
@@ -66,24 +65,20 @@ export default function Experience() {
       <div className="star-glow animate-star-blink absolute bottom-1/3 right-[15%] w-1 h-1" style={{ animationDelay: "1.6s" }} />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        <AnimatedContent distance={50} direction="vertical" reverse={false} duration={0.8} delay={0.2}>
         {/* Section Heading */}
+        <AnimatedContent distance={50} direction="vertical" duration={0.8}>
         <div className="text-center md:text-left mb-16 flex flex-col md:items-start items-center">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 flex gap-2 flex-wrap justify-center md:justify-start">
-            <SplitText text="Experience &" tag="span" /> <SplitText text="Education" className="text-gradient-silver" tag="span" delay={60} />
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            Experience &amp; <span className="text-gradient-silver">Education</span>
           </h2>
-          <div className="text-zinc-400 max-w-lg md:text-left text-center">
-            <SplitText 
-              text="My professional internships, academic history, and technical achievements." 
-              tag="p" 
-              splitType="words" 
-              delay={30} 
-              textAlign="inherit"
-            />
-          </div>
+          <p className="text-zinc-400 max-w-lg md:text-left text-center">
+            My professional internships, academic history, and technical achievements.
+          </p>
         </div>
+        </AnimatedContent>
 
         {/* Timeline Grid */}
+        <AnimatedContent distance={50} direction="vertical" duration={0.8} delay={0.2}>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
           
           {/* Work Experience Column */}
