@@ -31,7 +31,8 @@ export default function Hero() {
           </h1>
 
           <p className="text-zinc-400 text-sm sm:text-base max-w-lg leading-relaxed mb-8 font-light">
-            <span className="text-primary font-medium tracking-wide uppercase">Computer Engineering Graduate & Developer</span> — I specialize in intelligent hardware integrations, responsive IoT systems, and CAD layouts. Blending technical engineering skills with active troubleshooting and development.
+            <span className="text-primary font-medium tracking-wide uppercase">Computer Engineering Graduate & Developer</span> — <br />
+            I specialize in intelligent hardware integrations, responsive IoT systems, and CAD layouts. Blending technical engineering skills with active troubleshooting and development.
           </p>
 
           {/* Action buttons */}
