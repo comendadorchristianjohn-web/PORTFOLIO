@@ -18,6 +18,7 @@ export interface GooeyNavProps {
   timeVariance?: number;
   colors?: number[];
   initialActiveIndex?: number;
+  activeIndex?: number;
 }
 
 const GooeyNav: React.FC<GooeyNavProps> = ({
@@ -28,13 +29,16 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
   particleR = 80,
   timeVariance = 200,
   colors = [1, 2, 3, 1, 2, 3, 4],
-  initialActiveIndex = 0
+  initialActiveIndex = 0,
+  activeIndex: controlledActiveIndex
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLUListElement>(null);
   const filterRef = useRef<HTMLSpanElement>(null);
   const textRef = useRef<HTMLSpanElement>(null);
-  const [activeIndex, setActiveIndex] = useState<number>(initialActiveIndex);
+  const [internalActiveIndex, setInternalActiveIndex] = useState<number>(initialActiveIndex);
+
+  const activeIndex = controlledActiveIndex !== undefined ? controlledActiveIndex : internalActiveIndex;
 
   const noise = (n = 1) => n / 2 - Math.random() * n;
   const getXY = (distance: number, pointIndex: number, totalPoints: number): [number, number] => {
@@ -108,7 +112,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
     const liEl = e.currentTarget.parentElement;
     if (!liEl) return;
     if (activeIndex === index) return;
-    setActiveIndex(index);
+    setInternalActiveIndex(index);
     updateEffectPosition(liEl);
 
     if (onClickCallback) {

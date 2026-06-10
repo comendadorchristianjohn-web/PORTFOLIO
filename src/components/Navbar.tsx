@@ -9,50 +9,90 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 20) {
-        setScrolled(true);
-      } else {
-        setScrolled(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
   const navItems = [
     {
+      id: "home",
       icon: <Home className="w-5 h-5" />,
       label: "Home",
       href: "#",
       onClick: () => window.scrollTo({ top: 0, behavior: "smooth" })
     },
     {
+      id: "skills",
       icon: <Cpu className="w-5 h-5" />,
       label: "Skills",
       href: "#skills",
       onClick: () => document.getElementById("skills")?.scrollIntoView({ behavior: "smooth" })
     },
     {
+      id: "experience",
       icon: <Briefcase className="w-5 h-5" />,
       label: "Experience",
       href: "#experience",
       onClick: () => document.getElementById("experience")?.scrollIntoView({ behavior: "smooth" })
     },
     {
+      id: "projects",
       icon: <FolderOpen className="w-5 h-5" />,
       label: "Projects",
       href: "#projects",
       onClick: () => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
     },
     {
+      id: "contact",
       icon: <Mail className="w-5 h-5" />,
       label: "Contact",
       href: "#contact",
       onClick: () => document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" })
     }
   ];
+
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Handle transparent/solid navbar background
+      if (window.scrollY > 20) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+
+      // Handle active navigation item based on scroll position
+      const sections = navItems.map(item => item.id);
+      let currentActiveIndex = 0;
+
+      for (let i = sections.length - 1; i >= 0; i--) {
+        const sectionId = sections[i];
+        if (sectionId === "home") {
+          // If we are at the top, home is active
+          if (window.scrollY < 100) {
+            currentActiveIndex = 0;
+            break;
+          }
+          continue;
+        }
+
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          // Adjust the offset value (e.g., 200) based on your layout and preference
+          if (rect.top <= 200) {
+            currentActiveIndex = i;
+            break;
+          }
+        }
+      }
+
+      setActiveIndex(currentActiveIndex);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    // Call once initially to set the correct active index
+    handleScroll();
+    
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <nav
@@ -66,7 +106,7 @@ export default function Navbar() {
         
         {/* Desktop Navigation & Socials on the Right */}
         <div className="hidden md:flex items-center gap-6 flex-shrink-0">
-          <GooeyNav items={navItems} />
+          <GooeyNav items={navItems} activeIndex={activeIndex} />
           
           <div className="h-6 w-px bg-white/10" />
 
@@ -127,7 +167,11 @@ export default function Navbar() {
                     setIsOpen(false);
                     item.onClick();
                   }}
-                  className="p-3 bg-white/5 border border-white/5 rounded-xl hover:border-primary text-zinc-300 hover:text-white transition-all flex items-center justify-center w-full"
+                  className={`p-3 bg-white/5 border rounded-xl hover:border-primary transition-all flex items-center justify-center w-full ${
+                    activeIndex === index 
+                      ? 'border-primary text-white' 
+                      : 'border-white/5 text-zinc-300 hover:text-white'
+                  }`}
                   title={item.label}
                 >
                   {item.icon}
