@@ -2,6 +2,7 @@
 
 import { Briefcase, GraduationCap, Award, BookOpen } from "lucide-react";
 import SplitText from "./SplitText";
+import AnimatedContent from "./AnimatedContent";
 
 export default function Experience() {
   const workExp = [
@@ -65,7 +66,7 @@ export default function Experience() {
       <div className="star-glow animate-star-blink absolute bottom-1/3 right-[15%] w-1 h-1" style={{ animationDelay: "1.6s" }} />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
-        
+        <AnimatedContent distance={50} direction="vertical" reverse={false} duration={0.8} delay={0.2}>
         {/* Section Heading */}
         <div className="text-center md:text-left mb-16 flex flex-col md:items-start items-center">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 flex gap-2 flex-wrap justify-center md:justify-start">
@@ -218,7 +219,7 @@ export default function Experience() {
           </div>
 
         </div>
-
+        </AnimatedContent>
       </div>
     </section>
   );

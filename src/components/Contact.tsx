@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Mail, Phone, MapPin, Send, Copy, Check } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import { db, isFirebaseConfigured } from "@/lib/firebase";
+import AnimatedContent from "./AnimatedContent";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 export default function Contact() {
@@ -112,6 +113,7 @@ export default function Contact() {
       <div className="star-glow animate-star-blink absolute bottom-1/4 right-[20%] w-1 h-1" style={{ animationDelay: "1.8s" }} />
 
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
+        <AnimatedContent distance={50} direction="vertical" reverse={false} duration={0.8} delay={0.2}>
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
             Get In <span className="text-gradient-silver">Touch</span>
@@ -269,6 +271,7 @@ export default function Contact() {
             </form>
           </div>
         </div>
+        </AnimatedContent>
       </div>
     </section>
   );

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { ExternalLink, Sparkles } from "lucide-react";
 import { GithubIcon } from "@/components/icons";
 import SplitText from "./SplitText";
+import AnimatedContent from "./AnimatedContent";
 
 export default function Projects() {
   const allProjects = [
@@ -58,6 +59,7 @@ export default function Projects() {
       <div className="star-glow animate-star-blink absolute bottom-1/4 right-[25%] w-1 h-1" style={{ animationDelay: "1.4s" }} />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <AnimatedContent distance={50} direction="vertical" reverse={false} duration={0.8} delay={0.2}>
         {/* Section Header */}
         <div className="text-center md:text-left mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="flex flex-col md:items-start items-center">
@@ -148,6 +150,7 @@ export default function Projects() {
             );
           })}
         </div>
+        </AnimatedContent>
       </div>
     </section>
   );

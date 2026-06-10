@@ -9,6 +9,7 @@ import {
   Globe 
 } from "lucide-react";
 import LogoLoop, { LogoItem } from "./LogoLoop";
+import AnimatedContent from "./AnimatedContent";
 
 export default function Skills() {
   const skillCategories = [
@@ -44,6 +45,7 @@ export default function Skills() {
       <div className="star-glow animate-star-blink absolute bottom-1/4 left-[8%] w-1.5 h-1.5" style={{ animationDelay: "1.2s" }} />
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <AnimatedContent distance={50} direction="vertical" reverse={false} duration={0.8}>
         {/* Section Title */}
         <div className="text-center md:text-left mb-16">
           <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
@@ -141,6 +143,7 @@ export default function Skills() {
             </div>
           </div>
         </div>
+        </AnimatedContent>
       </div>
     </section>
   );
