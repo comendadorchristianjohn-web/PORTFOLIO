@@ -99,8 +99,11 @@ const AnimatedContent: React.FC<AnimatedContentProps> = ({
       trigger: el,
       scroller: scrollerTarget || window,
       start: `top ${startPct}%`,
-      once: true,
-      onEnter: () => tl.play()
+      end: 'bottom 0%',
+      onEnter: () => tl.play(),
+      onLeave: () => tl.reverse(),
+      onEnterBack: () => tl.play(),
+      onLeaveBack: () => tl.reverse()
     });
 
     return () => {
