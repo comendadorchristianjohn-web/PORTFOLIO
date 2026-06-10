@@ -7,6 +7,16 @@ import { GithubIcon } from "@/components/icons";
 export default function Projects() {
   const allProjects = [
     {
+      title: "Expense Tracker",
+      description: "A web-based expense tracking application designed to help users monitor their financial transactions and manage personal budgets efficiently.",
+      tech: ["React", "Web App", "Frontend"],
+      github: "https://github.com/comendadorchristianjohn-web",
+      demo: "https://expense-tracker-six-delta-58.vercel.app",
+      imageClass: "bg-gradient-to-br from-[#0f172a] to-[#1e293b]",
+      image: "",
+      featured: true,
+    },
+    {
       title: "IoT Automated Pet Feeding Dispenser",
       description: "Designed and developed an automated feeding dispenser system for rescued dogs and cats using ESP32 and Raspberry Pi. Streamlines animal shelter caretaking processes and ensures scheduled feeding efficiency.",
       tech: ["ESP32", "Raspberry Pi", "IoT", "C++", "Hardware Integration"],
@@ -62,7 +72,7 @@ export default function Projects() {
         {/* Projects Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {allProjects.map((project, index) => {
-            const isLastOdd = index === 2 && allProjects.length === 3;
+            const isLastOdd = index === allProjects.length - 1 && allProjects.length % 2 !== 0;
             return (
               <div
                 key={index}
