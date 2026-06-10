@@ -54,6 +54,36 @@ export default function Skills() {
           </p>
         </div>
 
+        {/* Skills Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {skillCategories.map((category, index) => (
+            <div 
+              key={index} 
+              className="glass glass-interactive rounded-2xl p-6 flex flex-col gap-6"
+            >
+              <div className="flex items-center gap-3 border-b border-white/5 pb-4">
+                <div className="p-2.5 rounded-xl bg-white/5 border border-white/10">
+                  {category.icon}
+                </div>
+                <h3 className="font-bold text-white tracking-wide text-lg">
+                  {category.title}
+                </h3>
+              </div>
+
+              <div className="flex flex-wrap gap-2.5">
+                {category.skills.map((skill) => (
+                  <span
+                    key={skill}
+                    className="text-xs font-medium px-3 py-1.5 rounded-lg bg-white/5 border border-white/5 text-zinc-300 hover:text-white hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 cursor-default"
+                  >
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+
         {/* Skills Animation Loops */}
         <div className="flex flex-col gap-6 w-full relative pt-4 pb-8">
           {(() => {
