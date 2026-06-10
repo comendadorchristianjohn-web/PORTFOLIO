@@ -2,6 +2,7 @@
 
 import { ChevronDown } from "lucide-react";
 import Lanyard from "./Lanyard";
+import TextType from "./TextType";
 
 export default function Hero() {
   return (
@@ -26,9 +27,12 @@ export default function Hero() {
             Computer Engineer
           </div>
 
-          <h1 className="text-5xl sm:text-7xl font-bold tracking-tight text-white mb-4 leading-none">
-            Hi!, I'm <span className="text-gradient-silver">CJ</span>
-          </h1>
+          <TextType 
+            text="Hi, I'm Christian" 
+            as="h1" 
+            className="text-5xl sm:text-7xl font-bold tracking-tight text-white mb-4 leading-none" 
+            loop={false}
+          />
 
           <p className="text-zinc-400 text-sm sm:text-base max-w-lg leading-relaxed mb-8 font-light">
             <span className="text-primary font-medium tracking-wide uppercase">Computer Engineering Graduate & Developer</span> — <br />
