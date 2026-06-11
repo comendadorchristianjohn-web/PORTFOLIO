@@ -3,6 +3,7 @@
 import { ChevronDown } from "lucide-react";
 import Lanyard from "./Lanyard";
 import TextType from "./TextType";
+import { GithubIcon, LinkedinIcon } from "@/components/icons";
 
 export default function Hero() {
   return (
@@ -16,6 +17,11 @@ export default function Hero() {
       <div className="star-glow animate-star-blink absolute top-[20%] right-[35%] w-1 h-1" style={{ animationDelay: "1.5s" }} />
       <div className="star-glow animate-star-blink absolute top-[60%] right-[40%] w-1.5 h-1.5" style={{ animationDelay: "2.5s" }} />
       <div className="star-glow animate-star-blink absolute bottom-[15%] right-[10%] w-1 h-1" style={{ animationDelay: "0.8s" }} />
+
+      {/* Lanyard — absolutely hangs from the very top of the section */}
+      <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:flex items-start justify-center pointer-events-auto">
+        <Lanyard position={[0, 0, 12]} />
+      </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
 
@@ -35,12 +41,12 @@ export default function Hero() {
           />
 
           <p className="text-zinc-600 text-sm sm:text-base max-w-lg leading-relaxed mb-8 font-light">
-            <span className="text-primary font-medium tracking-wide uppercase">Computer Engineering Graduate & Developer</span> — <br />
+            <span className="text-primary font-medium tracking-wide uppercase">Computer Engineering Graduate &amp; Developer</span> — <br />
             I specialize in intelligent hardware integrations, responsive IoT systems, and CAD layouts. Blending technical engineering skills with active troubleshooting and development.
           </p>
 
-          {/* Action buttons */}
-          <div className="flex flex-wrap gap-4 w-full sm:w-auto">
+          {/* Action buttons + socials */}
+          <div className="flex flex-wrap items-center gap-4 w-full sm:w-auto">
             <a
               href="#projects"
               className="border border-black/40 rounded-full px-8 py-3 text-xs tracking-wider uppercase font-semibold text-black hover:border-primary hover:bg-primary/5 transition-all duration-300 text-center flex-grow sm:flex-grow-0"
@@ -53,14 +59,35 @@ export default function Hero() {
             >
               Contact Me
             </a>
+
+            {/* Divider */}
+            <div className="h-6 w-px bg-black/15" />
+
+            {/* Social icons */}
+            <a
+              href="https://github.com/comendadorchristianjohn-web"
+              target="_blank" rel="noopener noreferrer"
+              className="text-zinc-500 hover:text-black transition-colors duration-200"
+              title="GitHub"
+            >
+              <GithubIcon className="w-5 h-5" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/christian-john-comendador-a12b2534b/"
+              target="_blank" rel="noopener noreferrer"
+              className="text-zinc-500 hover:text-black transition-colors duration-200"
+              title="LinkedIn"
+            >
+              <LinkedinIcon className="w-5 h-5" />
+            </a>
           </div>
         </div>
 
-        {/* Right Side — Holographic ProfileCard */}
-        <div className="lg:col-span-6 relative flex items-center justify-center h-[500px] sm:h-[620px] lg:h-[80vh] w-full">
+        {/* Right Side — empty spacer on desktop so grid stays; lanyard is absolute above */}
+        <div className="lg:col-span-6 hidden lg:block" aria-hidden />
 
-          {/* Removed diagonal structural lines texture */}
-
+        {/* Mobile lanyard (below text) */}
+        <div className="lg:hidden relative flex items-center justify-center h-[500px] w-full">
           <Lanyard position={[0, 0, 12]} />
         </div>
 

@@ -103,29 +103,7 @@ export default function Navbar() {
           : "py-4 bg-transparent"
       }`}>
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-end">
-          {/* Desktop Socials on the Right */}
-          <div className="hidden md:flex items-center gap-4">
-            <a
-              href="https://github.com/comendadorchristianjohn-web"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-600 hover:text-black transition-colors duration-200"
-              title="GitHub"
-            >
-              <GithubIcon className="w-5 h-5" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/christian-john-comendador-a12b2534b/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-zinc-600 hover:text-black transition-colors duration-200"
-              title="LinkedIn"
-            >
-              <LinkedinIcon className="w-5 h-5" />
-            </a>
-          </div>
-
-          {/* Mobile menu toggle */}
+          {/* Mobile menu toggle only — socials are in Hero section */}
           <button
             onClick={() => setIsOpen(!isOpen)}
             className="md:hidden p-2 text-zinc-600 hover:text-black focus:outline-none"
