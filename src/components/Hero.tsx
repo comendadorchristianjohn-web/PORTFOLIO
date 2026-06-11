@@ -1,8 +1,8 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
+import Lanyard from "./Lanyard";
 import TextType from "./TextType";
-import TiltedCard from "./TiltedCard";
 
 export default function Hero() {
   return (
@@ -62,21 +62,7 @@ export default function Hero() {
           {/* Diagonal structural lines texture */}
           <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[90%] h-[80%] diagonal-lines rounded-2xl opacity-60 pointer-events-none" />
 
-          <div className="w-full max-w-sm aspect-[3/4] p-4">
-            <TiltedCard
-              imageSrc="/profile.jpg"
-              altText="Christian John Comendador"
-              captionText="Christian John Comendador"
-              containerHeight="100%"
-              containerWidth="100%"
-              imageHeight="100%"
-              imageWidth="100%"
-              rotateAmplitude={12}
-              scaleOnHover={1.05}
-              showMobileWarning={false}
-              showTooltip={true}
-            />
-          </div>
+          <Lanyard />
         </div>
 
       </div>
