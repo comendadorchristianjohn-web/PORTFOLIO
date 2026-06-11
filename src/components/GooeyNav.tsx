@@ -198,20 +198,20 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
           }
           .effect.filter {
             filter: blur(5px) contrast(50) blur(0);
-            mix-blend-mode: lighten;
+            mix-blend-mode: multiply;
           }
           .effect.filter::before {
             content: "";
             position: absolute;
             inset: -40px;
             z-index: -2;
-            background: black;
+            background: white;
           }
           .effect.filter::after {
             content: "";
             position: absolute;
             inset: 0;
-            background: #ffffff;
+            background: #e5e5e5;
             transform: scale(0);
             opacity: 0;
             z-index: -1;
@@ -309,7 +309,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
             position: absolute;
             inset: 0;
             border-radius: 9999px;
-            background: #ffffff;
+            background: #e5e5e5;
             opacity: 0;
             transform: scale(0);
             transition: all 0.3s ease;

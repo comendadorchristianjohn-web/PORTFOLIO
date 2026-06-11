@@ -84,7 +84,7 @@ export default function Skills() {
                   pauseOnHover={true}
                   gap={24}
                   fadeOut={true}
-                  fadeOutColor="#000000"
+                  fadeOutColor="#ffffff"
                 />
                 <LogoLoop 
                   logos={row2} 
@@ -94,7 +94,7 @@ export default function Skills() {
                   pauseOnHover={true}
                   gap={24}
                   fadeOut={true}
-                  fadeOutColor="#000000"
+                  fadeOutColor="#ffffff"
                 />
               </>
             );
