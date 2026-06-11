@@ -18,8 +18,8 @@ export default function Hero() {
       <div className="star-glow animate-star-blink absolute top-[60%] right-[40%] w-1.5 h-1.5" style={{ animationDelay: "2.5s" }} />
       <div className="star-glow animate-star-blink absolute bottom-[15%] right-[10%] w-1 h-1" style={{ animationDelay: "0.8s" }} />
 
-      {/* Lanyard — absolutely hangs from the very top of the section */}
-      <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:flex items-start justify-center pointer-events-auto">
+      {/* Lanyard — absolutely hangs from the very top of the section, z-20 so it’s above the grid */}
+      <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:flex items-start justify-center z-20">
         <Lanyard position={[0, 2, 20]} />
       </div>
 
@@ -83,8 +83,8 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Right Side — empty spacer on desktop so grid stays; lanyard is absolute above */}
-        <div className="lg:col-span-6 hidden lg:block" aria-hidden />
+        {/* Right Side — pointer-events-none so mouse passes through to the lanyard canvas */}
+        <div className="lg:col-span-6 hidden lg:block pointer-events-none" aria-hidden />
 
         {/* Mobile lanyard (below text) */}
         <div className="lg:hidden relative flex items-center justify-center h-[500px] w-full">
