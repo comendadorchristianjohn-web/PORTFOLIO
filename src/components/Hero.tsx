@@ -62,7 +62,7 @@ export default function Hero() {
           {/* Diagonal structural lines texture */}
           <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[90%] h-[80%] diagonal-lines rounded-2xl opacity-60 pointer-events-none" />
 
-          <Lanyard />
+          <Lanyard position={[0, 0, 12]} />
         </div>
 
       </div>
