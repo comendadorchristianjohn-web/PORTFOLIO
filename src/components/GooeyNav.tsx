@@ -321,7 +321,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
         <nav className="flex relative" style={{ transform: 'translate3d(0,0,0.01px)' }}>
           <ul
             ref={navRef}
-            className="flex gap-2.5 list-none p-0 px-2 m-0 relative z-[3] rounded-full border border-white/10 bg-black/60 backdrop-blur-md py-1.5"
+            className="flex gap-2.5 list-none p-0 px-2 m-0 relative z-[3] rounded-full border border-black/10 bg-white/60 backdrop-blur-md py-1.5"
             style={{
               color: 'white'
             }}
@@ -336,7 +336,7 @@ const GooeyNav: React.FC<GooeyNavProps> = ({
                 <button
                   onClick={e => handleClick(e, index, item.onClick)}
                   onKeyDown={e => handleKeyDown(e, index, item.onClick)}
-                  className="outline-none p-3.5 inline-block text-zinc-300 hover:text-white transition-colors duration-300 w-12 h-12 flex items-center justify-center"
+                  className="outline-none p-3.5 inline-block text-zinc-700 hover:text-black transition-colors duration-300 w-12 h-12 flex items-center justify-center"
                   title={item.label}
                   aria-label={item.label}
                 >

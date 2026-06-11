@@ -98,7 +98,7 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "py-2.5 glass border-b border-white/5 shadow-lg shadow-black/20"
+          ? "py-2.5 glass border-b border-black/5 shadow-lg shadow-black/20"
           : "py-4 bg-transparent"
       }`}
     >
@@ -115,7 +115,7 @@ export default function Navbar() {
               href="https://github.com/comendadorchristianjohn-web"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-400 hover:text-white transition-colors duration-200"
+              className="text-zinc-600 hover:text-black transition-colors duration-200"
               title="GitHub"
             >
               <GithubIcon className="w-5 h-5" />
@@ -124,7 +124,7 @@ export default function Navbar() {
               href="https://www.linkedin.com/in/christian-john-comendador-a12b2534b/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-400 hover:text-white transition-colors duration-200"
+              className="text-zinc-600 hover:text-black transition-colors duration-200"
               title="LinkedIn"
             >
               <LinkedinIcon className="w-5 h-5" />
@@ -135,7 +135,7 @@ export default function Navbar() {
         {/* Mobile menu toggle */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden p-2 text-zinc-400 hover:text-white focus:outline-none animate-pulse"
+          className="md:hidden p-2 text-zinc-600 hover:text-black focus:outline-none animate-pulse"
         >
           {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
         </button>
@@ -143,23 +143,23 @@ export default function Navbar() {
 
       {/* Mobile Drawer */}
       <div
-        className={`fixed inset-y-0 right-0 z-40 w-full max-w-xs glass border-l border-white/10 shadow-2xl p-8 flex flex-col justify-between transition-transform duration-300 ease-in-out md:hidden ${
+        className={`fixed inset-y-0 right-0 z-40 w-full max-w-xs glass border-l border-black/10 shadow-2xl p-8 flex flex-col justify-between transition-transform duration-300 ease-in-out md:hidden ${
           isOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="flex flex-col gap-8">
           <div className="flex items-center justify-between">
-            <span className="text-lg font-bold text-white">Navigation</span>
+            <span className="text-lg font-bold text-black">Navigation</span>
             <button
               onClick={() => setIsOpen(false)}
-              className="p-2 text-zinc-400 hover:text-white"
+              className="p-2 text-zinc-600 hover:text-black"
             >
               <X className="w-6 h-6" />
             </button>
           </div>
 
           {/* Mobile Navigation Icons */}
-          <ul className="grid grid-cols-5 gap-2.5 py-3 px-2 bg-white/5 border border-white/10 rounded-2xl">
+          <ul className="grid grid-cols-5 gap-2.5 py-3 px-2 bg-white/5 border border-black/10 rounded-2xl">
             {navItems.map((item, index) => (
               <li key={index} className="flex justify-center">
                 <button
@@ -169,8 +169,8 @@ export default function Navbar() {
                   }}
                   className={`p-3 bg-white/5 border rounded-xl hover:border-primary transition-all flex items-center justify-center w-full ${
                     activeIndex === index 
-                      ? 'border-primary text-white' 
-                      : 'border-white/5 text-zinc-300 hover:text-white'
+                      ? 'border-primary text-black' 
+                      : 'border-black/5 text-zinc-700 hover:text-black'
                   }`}
                   title={item.label}
                 >
@@ -189,7 +189,7 @@ export default function Navbar() {
               href="https://github.com/comendadorchristianjohn-web"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white/5 border border-white/10 rounded-full text-zinc-300 hover:text-white hover:border-primary transition-all"
+              className="p-3 bg-white/5 border border-black/10 rounded-full text-zinc-700 hover:text-black hover:border-primary transition-all"
               title="GitHub"
             >
               <GithubIcon className="w-5 h-5" />
@@ -198,7 +198,7 @@ export default function Navbar() {
               href="https://www.linkedin.com/in/christian-john-comendador-a12b2534b/"
               target="_blank"
               rel="noopener noreferrer"
-              className="p-3 bg-white/5 border border-white/10 rounded-full text-zinc-300 hover:text-white hover:border-primary transition-all"
+              className="p-3 bg-white/5 border border-black/10 rounded-full text-zinc-700 hover:text-black hover:border-primary transition-all"
               title="LinkedIn"
             >
               <LinkedinIcon className="w-5 h-5" />

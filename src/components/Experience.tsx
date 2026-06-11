@@ -56,7 +56,7 @@ export default function Experience() {
   ];
 
   return (
-    <section id="experience" className="py-24 relative overflow-hidden bg-black">
+    <section id="experience" className="py-24 relative overflow-hidden bg-white">
       {/* Background Glow orb */}
       <div className="absolute left-0 top-1/3 w-80 h-80 rounded-full bg-primary-glow blur-[100px] pointer-events-none" />
 
@@ -68,10 +68,10 @@ export default function Experience() {
         {/* Section Heading */}
         <AnimatedContent distance={50} direction="vertical" duration={0.8}>
         <div className="text-center md:text-left mb-16 flex flex-col md:items-start items-center">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black mb-4">
             Experience &amp; <span className="text-gradient-silver">Education</span>
           </h2>
-          <p className="text-zinc-400 max-w-lg md:text-left text-center">
+          <p className="text-zinc-600 max-w-lg md:text-left text-center">
             My professional internships, academic history, and technical achievements.
           </p>
         </div>
@@ -87,25 +87,25 @@ export default function Experience() {
               <div className="p-2 bg-primary/10 border border-primary/20 text-primary rounded-xl">
                 <Briefcase className="w-5 h-5" />
               </div>
-              <h3 className="text-xl font-bold text-white tracking-wide">Work History</h3>
+              <h3 className="text-xl font-bold text-black tracking-wide">Work History</h3>
             </div>
 
-            <div className="flex flex-col gap-6 pl-2 border-l border-white/5 relative">
+            <div className="flex flex-col gap-6 pl-2 border-l border-black/5 relative">
               {workExp.map((exp, idx) => (
                 <div key={idx} className="relative pl-6 pb-2 group">
                   {/* Timeline Dot */}
                   <div className="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-primary group-hover:scale-125 transition-transform" />
                   
-                  <div className="glass rounded-xl p-6 border border-white/5 hover:border-primary/25 transition-colors duration-300">
+                  <div className="glass rounded-xl p-6 border border-black/5 hover:border-primary/25 transition-colors duration-300">
                     <span className="text-xs font-semibold text-primary uppercase tracking-wider block mb-1">
                       {exp.duration}
                     </span>
-                    <h4 className="text-lg font-bold text-white group-hover:text-primary transition-colors">
+                    <h4 className="text-lg font-bold text-black group-hover:text-primary transition-colors">
                       {exp.role}
                     </h4>
-                    <p className="text-sm text-zinc-400 font-medium mb-4">{exp.company}</p>
+                    <p className="text-sm text-zinc-600 font-medium mb-4">{exp.company}</p>
                     
-                    <ul className="flex flex-col gap-2 list-disc pl-4 text-xs text-zinc-400 leading-relaxed">
+                    <ul className="flex flex-col gap-2 list-disc pl-4 text-xs text-zinc-600 leading-relaxed">
                       {exp.tasks.map((task, tidx) => (
                         <li key={tidx}>{task}</li>
                       ))}
@@ -124,22 +124,22 @@ export default function Experience() {
                 <div className="p-2 bg-secondary/10 border border-secondary/20 text-secondary rounded-xl">
                   <GraduationCap className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-bold text-white tracking-wide">Education</h3>
+                <h3 className="text-xl font-bold text-black tracking-wide">Education</h3>
               </div>
 
-              <div className="flex flex-col gap-6 pl-2 border-l border-white/5 relative">
+              <div className="flex flex-col gap-6 pl-2 border-l border-black/5 relative">
                 {education.map((edu, idx) => (
                   <div key={idx} className="relative pl-6 pb-2 group">
                     <div className="absolute -left-[5px] top-1.5 w-2 h-2 rounded-full bg-secondary group-hover:scale-125 transition-transform" />
                     
-                    <div className="glass rounded-xl p-6 border border-white/5 hover:border-secondary/25 transition-colors duration-300">
+                    <div className="glass rounded-xl p-6 border border-black/5 hover:border-secondary/25 transition-colors duration-300">
                       <span className="text-xs font-semibold text-secondary uppercase tracking-wider block mb-1">
                         {edu.date}
                       </span>
-                      <h4 className="text-lg font-bold text-white group-hover:text-secondary transition-colors">
+                      <h4 className="text-lg font-bold text-black group-hover:text-secondary transition-colors">
                         {edu.degree}
                       </h4>
-                      <p className="text-sm text-zinc-400 font-medium mb-3">{edu.institution}</p>
+                      <p className="text-sm text-zinc-600 font-medium mb-3">{edu.institution}</p>
                       
                       <div className="flex flex-wrap gap-2">
                         {edu.details.map((detail, didx) => (
@@ -163,7 +163,7 @@ export default function Experience() {
                 <div className="p-2 bg-accent/10 border border-accent/20 text-accent rounded-xl">
                   <Award className="w-5 h-5" />
                 </div>
-                <h3 className="text-xl font-bold text-white tracking-wide">Certificates</h3>
+                <h3 className="text-xl font-bold text-black tracking-wide">Certificates</h3>
               </div>
 
               <div className="grid grid-cols-1 gap-4">
@@ -180,13 +180,13 @@ export default function Experience() {
                         <BookOpen className="w-5 h-5 text-accent mt-0.5 flex-shrink-0" />
                       )}
                       <div>
-                        <h4 className="text-sm font-bold text-white">{cert.name}</h4>
+                        <h4 className="text-sm font-bold text-black">{cert.name}</h4>
                         <p className="text-xs text-zinc-500 mt-1">{cert.issuer}</p>
                       </div>
                     </>
                   );
 
-                  const cardClass = "glass rounded-xl p-5 border border-white/5 hover:border-accent/20 transition-all duration-300 flex gap-4 items-center text-left w-full";
+                  const cardClass = "glass rounded-xl p-5 border border-black/5 hover:border-accent/20 transition-all duration-300 flex gap-4 items-center text-left w-full";
 
                   if (cert.link) {
                     return (

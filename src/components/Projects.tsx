@@ -49,7 +49,7 @@ export default function Projects() {
   ];
 
   return (
-    <section id="projects" className="py-24 relative overflow-hidden bg-black">
+    <section id="projects" className="py-24 relative overflow-hidden bg-white">
       {/* Background Glow */}
       <div className="absolute left-0 bottom-1/4 w-96 h-96 rounded-full bg-primary-glow blur-[120px] pointer-events-none" />
 
@@ -62,10 +62,10 @@ export default function Projects() {
         <AnimatedContent distance={50} direction="vertical" duration={0.8}>
         <div className="text-center md:text-left mb-16 flex flex-col md:flex-row md:items-end justify-between gap-6">
           <div className="flex flex-col md:items-start items-center">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black mb-4">
               Featured <span className="text-gradient-silver">Projects</span>
             </h2>
-            <p className="text-zinc-400 max-w-lg md:text-left text-center">
+            <p className="text-zinc-600 max-w-lg md:text-left text-center">
               A curated selection of applications and platforms I have architected, designed, and developed from the ground up.
             </p>
           </div>
@@ -83,7 +83,7 @@ export default function Projects() {
                 target={project.demo ? "_blank" : undefined}
                 rel={project.demo ? "noopener noreferrer" : undefined}
                 key={index}
-                className={`glass glass-interactive rounded-2xl overflow-hidden flex flex-col group border border-white/5 w-full ${
+                className={`glass glass-interactive rounded-2xl overflow-hidden flex flex-col group border border-black/5 w-full ${
                   isLastOdd ? "md:col-span-2 md:mx-auto md:w-[calc(50%-16px)]" : ""
                 } block ${project.demo ? "cursor-pointer" : ""}`}
               >
@@ -96,7 +96,7 @@ export default function Projects() {
                       className="absolute inset-0 w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                     />
                   ) : null}
-                  <div className="absolute inset-0 bg-black/50 backdrop-blur-[1px] transition-all duration-300 group-hover:bg-black/30" />
+                  <div className="absolute inset-0 bg-white/50 backdrop-blur-[1px] transition-all duration-300 group-hover:bg-white/30" />
                   
                   {/* Tech Badges floating */}
                   <div className="absolute top-4 left-4 flex gap-2 flex-wrap z-10">
@@ -109,7 +109,7 @@ export default function Projects() {
                   </div>
 
                   {!project.image && (
-                    <div className="z-10 text-white font-extrabold text-2xl tracking-widest uppercase opacity-75 group-hover:scale-105 transition-transform duration-500 text-center px-4">
+                    <div className="z-10 text-black font-extrabold text-2xl tracking-widest uppercase opacity-75 group-hover:scale-105 transition-transform duration-500 text-center px-4">
                       {project.title}
                     </div>
                   )}
@@ -118,10 +118,10 @@ export default function Projects() {
                 {/* Card Body */}
                 <div className="p-6 flex flex-col flex-1 justify-between gap-6">
                   <div className="flex flex-col gap-3">
-                    <h3 className="text-xl font-bold text-white group-hover:text-primary transition-colors duration-300">
+                    <h3 className="text-xl font-bold text-black group-hover:text-primary transition-colors duration-300">
                       {project.title}
                     </h3>
-                    <p className="text-sm text-zinc-400 leading-relaxed">
+                    <p className="text-sm text-zinc-600 leading-relaxed">
                       {project.description}
                     </p>
                   </div>
@@ -132,7 +132,7 @@ export default function Projects() {
                       {project.tech.map((t) => (
                         <span
                           key={t}
-                          className="text-xs px-2.5 py-1 rounded-md bg-white/5 text-zinc-300 border border-white/5"
+                          className="text-xs px-2.5 py-1 rounded-md bg-white/5 text-zinc-700 border border-black/5"
                         >
                           {t}
                         </span>

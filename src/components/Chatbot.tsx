@@ -163,7 +163,7 @@ export default function Chatbot() {
       const formattedParts = parts.map((part, pIdx) => {
         if (part.startsWith("**") && part.endsWith("**")) {
           return (
-            <strong key={pIdx} className="font-bold text-white text-[12px]">
+            <strong key={pIdx} className="font-bold text-black text-[12px]">
               {part.slice(2, -2)}
             </strong>
           );
@@ -173,14 +173,14 @@ export default function Chatbot() {
 
       if (isBullet) {
         return (
-          <li key={lineIdx} className="ml-4 list-disc text-zinc-300 text-[11.5px] leading-relaxed mb-1.5">
+          <li key={lineIdx} className="ml-4 list-disc text-zinc-700 text-[11.5px] leading-relaxed mb-1.5">
             {formattedParts}
           </li>
         );
       }
 
       return (
-        <p key={lineIdx} className="text-zinc-300 text-[11.5px] leading-relaxed mb-2 last:mb-0">
+        <p key={lineIdx} className="text-zinc-700 text-[11.5px] leading-relaxed mb-2 last:mb-0">
           {formattedParts}
         </p>
       );
@@ -194,7 +194,7 @@ export default function Chatbot() {
         <button
           onClick={handleOpenToggle}
           aria-label="Toggle Chatbot"
-          className="w-14 h-14 rounded-full glass border border-white/10 hover:border-white/40 flex items-center justify-center text-white cursor-pointer relative shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 group"
+          className="w-14 h-14 rounded-full glass border border-black/10 hover:border-black/40 flex items-center justify-center text-black cursor-pointer relative shadow-2xl transition-all duration-300 transform hover:scale-105 active:scale-95 group"
         >
           {/* Pulsing ring indicator when closed and new message is waiting */}
           {hasNewMessage && !isOpen && (
@@ -209,7 +209,7 @@ export default function Chatbot() {
           {isOpen ? (
             <X className="w-6 h-6 transition-transform duration-300 rotate-0 group-hover:rotate-90" />
           ) : (
-            <MessageSquare className="w-6 h-6 text-zinc-200 group-hover:text-white transition-colors" />
+            <MessageSquare className="w-6 h-6 text-zinc-800 group-hover:text-black transition-colors" />
           )}
 
           {/* Micro pulsing ambient glow */}
@@ -225,21 +225,21 @@ export default function Chatbot() {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.92, y: 30 }}
             transition={{ duration: 0.25, ease: "easeOut" }}
-            className="fixed bottom-24 right-6 w-[360px] sm:w-[380px] h-[520px] max-h-[calc(100vh-120px)] glass rounded-2xl flex flex-col z-50 shadow-2xl overflow-hidden border border-white/10"
+            className="fixed bottom-24 right-6 w-[360px] sm:w-[380px] h-[520px] max-h-[calc(100vh-120px)] glass rounded-2xl flex flex-col z-50 shadow-2xl overflow-hidden border border-black/10"
           >
             {/* Header */}
-            <div className="bg-black/90 border-b border-white/5 px-4 py-3 flex items-center justify-between flex-shrink-0">
+            <div className="bg-white/90 border-b border-black/5 px-4 py-3 flex items-center justify-between flex-shrink-0">
               <div className="flex items-center gap-3">
                 <div className="relative flex items-center justify-center">
-                  <div className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white">
-                    <Bot className="w-5 h-5 text-zinc-300" />
+                  <div className="w-9 h-9 rounded-full bg-white/5 border border-black/10 flex items-center justify-center text-black">
+                    <Bot className="w-5 h-5 text-zinc-700" />
                   </div>
                   <span className="absolute bottom-0 right-0 w-2.5 h-2.5 bg-emerald-500 rounded-full border border-black" />
                 </div>
                 <div className="flex flex-col">
-                  <span className="text-xs font-bold text-white tracking-wide">Christian's Assistant</span>
-                  <span className="text-[9px] text-zinc-400 flex items-center gap-1">
-                    <Sparkles className="w-2.5 h-2.5 text-zinc-400 animate-pulse" />
+                  <span className="text-xs font-bold text-black tracking-wide">Christian's Assistant</span>
+                  <span className="text-[9px] text-zinc-600 flex items-center gap-1">
+                    <Sparkles className="w-2.5 h-2.5 text-zinc-600 animate-pulse" />
                     Gemini 1.5 AI Bot
                   </span>
                 </div>
@@ -248,14 +248,14 @@ export default function Chatbot() {
               <div className="flex items-center gap-1.5">
                 <button
                   onClick={resetChat}
-                  className="p-2 rounded-lg hover:bg-white/5 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                  className="p-2 rounded-lg hover:bg-white/5 text-zinc-600 hover:text-black transition-colors cursor-pointer"
                   title="Clear conversation"
                 >
                   <RefreshCw className="w-3.5 h-3.5" />
                 </button>
                 <button
                   onClick={() => setIsOpen(false)}
-                  className="p-2 rounded-lg hover:bg-white/5 text-zinc-400 hover:text-white transition-colors cursor-pointer"
+                  className="p-2 rounded-lg hover:bg-white/5 text-zinc-600 hover:text-black transition-colors cursor-pointer"
                   title="Close chat"
                 >
                   <X className="w-3.5 h-3.5" />
@@ -266,7 +266,7 @@ export default function Chatbot() {
             {/* Scrollable Message Box */}
             <div
               ref={scrollContainerRef}
-              className="flex-grow overflow-y-auto p-4 flex flex-col gap-4 scrollbar-thin bg-black/40"
+              className="flex-grow overflow-y-auto p-4 flex flex-col gap-4 scrollbar-thin bg-white/40"
               style={{ scrollbarWidth: "thin" }}
             >
               {messages.map((msg, index) => {
@@ -277,15 +277,15 @@ export default function Chatbot() {
                     className={`flex items-start gap-2.5 ${isBot ? "justify-start" : "justify-end"}`}
                   >
                     {isBot && (
-                      <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white flex-shrink-0 mt-0.5">
-                        <Bot className="w-4 h-4 text-zinc-300" />
+                      <div className="w-7 h-7 rounded-full bg-white/5 border border-black/10 flex items-center justify-center text-black flex-shrink-0 mt-0.5">
+                        <Bot className="w-4 h-4 text-zinc-700" />
                       </div>
                     )}
                     <div className="flex flex-col gap-1 max-w-[80%]">
                       <div
                         className={`text-xs py-2.5 px-3.5 rounded-2xl shadow-md ${
                           isBot
-                            ? "bg-white/5 border border-white/5 text-zinc-200 rounded-tl-none"
+                            ? "bg-white/5 border border-black/5 text-zinc-800 rounded-tl-none"
                             : "bg-white text-black font-medium rounded-tr-none"
                         }`}
                       >
@@ -293,7 +293,7 @@ export default function Chatbot() {
                       </div>
                     </div>
                     {!isBot && (
-                      <div className="w-7 h-7 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-white text-[10px] font-bold flex-shrink-0 mt-0.5 uppercase">
+                      <div className="w-7 h-7 rounded-full bg-white/10 border border-black/15 flex items-center justify-center text-black text-[10px] font-bold flex-shrink-0 mt-0.5 uppercase">
                         U
                       </div>
                     )}
@@ -304,10 +304,10 @@ export default function Chatbot() {
               {/* Bot Typing Indicator */}
               {isTyping && (
                 <div className="flex items-start gap-2.5 justify-start">
-                  <div className="w-7 h-7 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white flex-shrink-0 mt-0.5">
-                    <Bot className="w-4 h-4 text-zinc-300" />
+                  <div className="w-7 h-7 rounded-full bg-white/5 border border-black/10 flex items-center justify-center text-black flex-shrink-0 mt-0.5">
+                    <Bot className="w-4 h-4 text-zinc-700" />
                   </div>
-                  <div className="bg-white/5 border border-white/5 text-zinc-300 text-xs py-3 px-4 rounded-2xl rounded-tl-none shadow-md">
+                  <div className="bg-white/5 border border-black/5 text-zinc-700 text-xs py-3 px-4 rounded-2xl rounded-tl-none shadow-md">
                     <div className="flex items-center gap-1.5 py-0.5">
                       <div
                         className="w-1.5 h-1.5 bg-zinc-400 rounded-full animate-bounce"
@@ -329,13 +329,13 @@ export default function Chatbot() {
             </div>
 
             {/* Quick Suggestions Chips Carousel/Strip */}
-            <div className="flex gap-2 overflow-x-auto px-4 pb-2.5 pt-1.5 bg-zinc-950/40 border-t border-white/5 flex-shrink-0 scrollbar-none select-none">
+            <div className="flex gap-2 overflow-x-auto px-4 pb-2.5 pt-1.5 bg-zinc-50/40 border-t border-black/5 flex-shrink-0 scrollbar-none select-none">
               {suggestions.map((suggestion, index) => (
                 <button
                   key={index}
                   type="button"
                   onClick={() => handleSuggestionClick(suggestion)}
-                  className="text-[10px] font-medium text-zinc-300 bg-white/5 border border-white/5 rounded-full px-3 py-1.5 whitespace-nowrap hover:bg-white/10 hover:border-white/10 hover:text-white transition-all duration-200 cursor-pointer flex-shrink-0"
+                  className="text-[10px] font-medium text-zinc-700 bg-white/5 border border-black/5 rounded-full px-3 py-1.5 whitespace-nowrap hover:bg-white/10 hover:border-black/10 hover:text-black transition-all duration-200 cursor-pointer flex-shrink-0"
                 >
                   {suggestion}
                 </button>
@@ -345,7 +345,7 @@ export default function Chatbot() {
             {/* Input Form */}
             <form
               onSubmit={handleSubmit}
-              className="p-3 bg-black border-t border-white/5 flex gap-2 items-center flex-shrink-0"
+              className="p-3 bg-white border-t border-black/5 flex gap-2 items-center flex-shrink-0"
             >
               <input
                 type="text"
@@ -353,7 +353,7 @@ export default function Chatbot() {
                 onChange={(e) => setInputValue(e.target.value)}
                 placeholder="Ask about Christian's skills, projects..."
                 disabled={isTyping}
-                className="flex-1 bg-white/5 border border-white/10 rounded-xl px-4 py-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all disabled:opacity-50"
+                className="flex-1 bg-white/5 border border-black/10 rounded-xl px-4 py-2.5 text-xs text-black placeholder-zinc-500 focus:outline-none focus:border-black/30 focus:ring-1 focus:ring-white/30 transition-all disabled:opacity-50"
               />
               <button
                 type="submit"

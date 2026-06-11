@@ -104,7 +104,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 relative overflow-hidden bg-black">
+    <section id="contact" className="py-24 relative overflow-hidden bg-white">
       {/* Glow effect */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 rounded-full bg-primary-glow blur-[150px] pointer-events-none" />
 
@@ -115,10 +115,10 @@ export default function Contact() {
       <div className="max-w-5xl mx-auto px-6 md:px-12 relative z-10">
         <AnimatedContent distance={50} direction="vertical" reverse={false} duration={0.8} delay={0.2}>
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-black mb-4">
             Get In <span className="text-gradient-silver">Touch</span>
           </h2>
-          <p className="text-zinc-400 max-w-lg mx-auto">
+          <p className="text-zinc-600 max-w-lg mx-auto">
             Have an exciting project idea, a position to fill, or just want to chat? Drop me a message below!
           </p>
         </div>
@@ -127,21 +127,21 @@ export default function Contact() {
           {/* Info Details (2 Cols) */}
           <div className="md:col-span-2 flex flex-col gap-8">
             <div className="glass rounded-2xl p-6 flex flex-col gap-6">
-              <h3 className="font-bold text-white text-lg border-b border-white/5 pb-3">
+              <h3 className="font-bold text-black text-lg border-b border-black/5 pb-3">
                 Contact Information
               </h3>
 
               <div className="flex flex-col gap-4">
                 {/* Email Item */}
-                <div className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                <div className="flex items-center justify-between p-3 rounded-xl bg-white/5 border border-black/5 hover:border-black/10 transition-colors">
                   <div className="flex items-center gap-3 overflow-hidden">
                     <Mail className="w-5 h-5 text-primary flex-shrink-0" />
-                    <span className="text-sm font-medium text-zinc-300 truncate">{emailAddress}</span>
+                    <span className="text-sm font-medium text-zinc-700 truncate">{emailAddress}</span>
                   </div>
                   <button
                     type="button"
                     onClick={handleCopyEmail}
-                    className="p-2 rounded-lg bg-white/5 hover:bg-white/10 border border-white/5 hover:border-white/10 text-zinc-400 hover:text-white transition-all duration-300 flex-shrink-0"
+                    className="p-2 rounded-lg bg-white/5 hover:bg-white/10 border border-black/5 hover:border-black/10 text-zinc-600 hover:text-black transition-all duration-300 flex-shrink-0"
                     title="Copy Email"
                   >
                     {copied ? <Check className="w-4 h-4 text-emerald-400" /> : <Copy className="w-4 h-4" />}
@@ -149,29 +149,29 @@ export default function Contact() {
                 </div>
 
                 {/* Phone Item */}
-                <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-black/5 hover:border-black/10 transition-colors">
                   <Phone className="w-5 h-5 text-secondary flex-shrink-0" />
-                  <span className="text-sm font-medium text-zinc-300">0976-567-9285</span>
+                  <span className="text-sm font-medium text-zinc-700">0976-567-9285</span>
                 </div>
 
                 {/* Location Item */}
-                <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-white/10 transition-colors">
+                <div className="flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-black/5 hover:border-black/10 transition-colors">
                   <MapPin className="w-5 h-5 text-accent flex-shrink-0" />
-                  <span className="text-sm font-medium text-zinc-300">Dasmariñas, Cavite</span>
+                  <span className="text-sm font-medium text-zinc-700">Dasmariñas, Cavite</span>
                 </div>
               </div>
             </div>
 
             <div className="glass rounded-2xl p-6 flex flex-col gap-4">
-              <h3 className="font-bold text-white text-lg">Social Connections</h3>
-              <p className="text-sm text-zinc-400">Feel free to connect or follow my work across my social platforms.</p>
+              <h3 className="font-bold text-black text-lg">Social Connections</h3>
+              <p className="text-sm text-zinc-600">Feel free to connect or follow my work across my social platforms.</p>
               
               <div className="flex gap-4 mt-2">
                 <a
                   href="https://github.com/comendadorchristianjohn-web"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-primary/30 hover:bg-primary/5 text-zinc-300 hover:text-white transition-all duration-300"
+                  className="flex-1 flex items-center justify-center gap-2 p-3 rounded-xl bg-white/5 border border-black/5 hover:border-primary/30 hover:bg-primary/5 text-zinc-700 hover:text-black transition-all duration-300"
                 >
                   <GithubIcon className="w-5 h-5" />
                   <span className="text-xs font-semibold">GitHub</span>
@@ -180,7 +180,7 @@ export default function Contact() {
                   href="https://www.linkedin.com/in/christian-john-comendador-a12b2534b/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex-1 flex items-center justify-center gap-2 p-3 rounded-xl bg-white/5 border border-white/5 hover:border-secondary/30 hover:bg-secondary/5 text-zinc-300 hover:text-white transition-all duration-300"
+                  className="flex-1 flex items-center justify-center gap-2 p-3 rounded-xl bg-white/5 border border-black/5 hover:border-secondary/30 hover:bg-secondary/5 text-zinc-700 hover:text-black transition-all duration-300"
                 >
                   <LinkedinIcon className="w-5 h-5" />
                   <span className="text-xs font-semibold">LinkedIn</span>
@@ -191,9 +191,9 @@ export default function Contact() {
 
           {/* Form Details (3 Cols) */}
           <div className="md:col-span-3">
-            <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 flex flex-col gap-6 border border-white/5">
+            <form onSubmit={handleSubmit} className="glass rounded-2xl p-8 flex flex-col gap-6 border border-black/5">
               <div>
-                <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">
+                <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-2">
                   Full Name
                 </label>
                 <input
@@ -203,12 +203,12 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   placeholder="John Doe"
                   required
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm"
+                  className="w-full bg-white/5 border border-black/10 rounded-xl px-4 py-3 text-black placeholder-zinc-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">
+                <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-2">
                   Email Address
                 </label>
                 <input
@@ -218,12 +218,12 @@ export default function Contact() {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   placeholder="johndoe@example.com"
                   required
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm"
+                  className="w-full bg-white/5 border border-black/10 rounded-xl px-4 py-3 text-black placeholder-zinc-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-zinc-400 mb-2">
+                <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-zinc-600 mb-2">
                   Message
                 </label>
                 <textarea
@@ -233,7 +233,7 @@ export default function Contact() {
                   placeholder="Tell me about your project..."
                   required
                   rows={4}
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder-zinc-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm resize-none"
+                  className="w-full bg-white/5 border border-black/10 rounded-xl px-4 py-3 text-black placeholder-zinc-500 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all text-sm resize-none"
                 />
               </div>
 
