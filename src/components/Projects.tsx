@@ -98,8 +98,14 @@ export default function Projects() {
                   ) : null}
                   <div className="absolute inset-0 bg-white/50 backdrop-blur-[1px] transition-all duration-300 group-hover:bg-white/30" />
                   
-                  {/* Tech Badges floating — featured badge removed */}
+                  {/* Tech Badges floating */}
                   <div className="absolute top-4 left-4 flex gap-2 flex-wrap z-10">
+                    {project.featured && (
+                      <span className="text-[10px] font-semibold tracking-wider text-black bg-white px-2 py-1 rounded-full uppercase flex items-center gap-1 shadow-sm">
+                        <Sparkles className="w-3 h-3 fill-current" />
+                        Featured
+                      </span>
+                    )}
                   </div>
 
                   {!project.image && (
