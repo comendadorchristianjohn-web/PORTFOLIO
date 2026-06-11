@@ -126,22 +126,21 @@ function useCardTexture() {
 
     // Name (Christian John Comendador)
     ctx.fillStyle = "#111827"; // Slate-900
-    ctx.font = "bold 44px Arial, sans-serif";
+    ctx.font = "bold 32px Arial, sans-serif";
     ctx.textAlign = "left";
-    ctx.fillText("Christian John", padX, photoH + 80);
-    ctx.fillText("Comendador",     padX, photoH + 140);
+    ctx.fillText("Christian John Comendador", padX, photoH + 80, qW - padX * 2);
 
     // Subtitle
     ctx.fillStyle = "#6b7280"; // Gray-500
-    ctx.font = "28px Arial, sans-serif";
-    ctx.fillText("Portfolio · 2026", padX, photoH + 200);
+    ctx.font = "20px Arial, sans-serif";
+    ctx.fillText("Computer Engineer", padX, photoH + 120);
 
     // Bottom row
     const botY = qH - 48;
-    ctx.fillStyle = "#9ca3af";
-    ctx.font = "20px Arial, sans-serif";
+    ctx.fillStyle = "#d1d5db"; // Faint text
+    ctx.font = "16px Arial, sans-serif";
     ctx.textAlign = "left";
-    ctx.fillText("Computer Engineering", padX, botY);
+    ctx.fillText("Member position", padX, botY);
     ctx.textAlign = "right";
     ctx.fillText("ID 00110", qW - padX, botY);
 
@@ -180,8 +179,8 @@ function useBandTexture() {
     canvas.height = 1024;
     const ctx = canvas.getContext("2d")!;
     
-    // Blue-grey background
-    ctx.fillStyle = "#475569";
+    // Black background
+    ctx.fillStyle = "#000000";
     ctx.fillRect(0, 0, 1024, 1024);
     
     // Draw atom logo
