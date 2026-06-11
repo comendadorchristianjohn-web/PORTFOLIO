@@ -180,8 +180,8 @@ function useBandTexture() {
     canvas.height = 1024;
     const ctx = canvas.getContext("2d")!;
     
-    // Black background
-    ctx.fillStyle = "#111827";
+    // Blue-grey background
+    ctx.fillStyle = "#475569";
     ctx.fillRect(0, 0, 1024, 1024);
     
     // Draw atom logo
