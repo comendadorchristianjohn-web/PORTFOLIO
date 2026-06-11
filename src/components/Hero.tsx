@@ -20,7 +20,7 @@ export default function Hero() {
 
       {/* Lanyard — absolutely hangs from the very top of the section */}
       <div className="absolute top-0 right-0 w-1/2 h-full hidden lg:flex items-start justify-center pointer-events-auto">
-        <Lanyard position={[0, 0, 12]} />
+        <Lanyard position={[0, 1.5, 12]} />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
