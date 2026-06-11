@@ -53,8 +53,8 @@ export default function Lanyard({
         gl={{ alpha: transparent }}
         onCreated={({ gl, camera }) => {
           gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1);
-          // Tilt camera slightly downward so card is centered and strap reaches top
-          camera.lookAt(0, 1, 0);
+          // Look at y=2.5 so strap reaches top and full card is visible below
+          camera.lookAt(0, 2.5, 0);
         }}
       >
         <ambientLight intensity={Math.PI} />
