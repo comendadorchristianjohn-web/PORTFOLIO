@@ -18,8 +18,7 @@ import * as THREE from "three";
 
 const cardGLB =
   "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/5huRVDzcoDwnbgrKUo1Lzs/53b6dd7d6b4ffcdbd338fa60265949e1/tag.glb";
-const lanyardURL =
-  "https://assets.vercel.com/image/upload/contentful/image/e5382hct74si/SOT1hmCesOHxEYxL7vkoZ/c57b29c85912047c414311723320c16b/band.jpg";
+// Band texture will be generated dynamically
 
 extend({ MeshLineGeometry, MeshLineMaterial });
 
@@ -174,6 +173,49 @@ function useCardTexture() {
   }, [profileTex]);
 }
 
+function useBandTexture() {
+  return useMemo(() => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 1024;
+    canvas.height = 1024;
+    const ctx = canvas.getContext("2d")!;
+    
+    // Black background
+    ctx.fillStyle = "#111827";
+    ctx.fillRect(0, 0, 1024, 1024);
+    
+    // Draw atom logo
+    ctx.translate(512, 512);
+    ctx.strokeStyle = "#ffffff";
+    ctx.lineWidth = 32;
+    
+    ctx.beginPath();
+    ctx.ellipse(0, 0, 300, 100, 0, 0, Math.PI * 2);
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.ellipse(0, 0, 300, 100, Math.PI / 3, 0, Math.PI * 2);
+    ctx.stroke();
+    
+    ctx.beginPath();
+    ctx.ellipse(0, 0, 300, 100, -Math.PI / 3, 0, Math.PI * 2);
+    ctx.stroke();
+    
+    ctx.fillStyle = "#ffffff";
+    ctx.beginPath();
+    ctx.arc(0, 0, 50, 0, Math.PI * 2);
+    ctx.fill();
+    
+    ctx.resetTransform();
+
+    const tex = new THREE.CanvasTexture(canvas);
+    tex.wrapS = tex.wrapT = THREE.RepeatWrapping;
+    tex.flipY = false;
+    tex.needsUpdate = true;
+    return tex;
+  }, []);
+}
+
 interface BandProps {
   maxSpeed?: number;
   minSpeed?: number;
@@ -202,7 +244,7 @@ function Band({ maxSpeed = 50, minSpeed = 0, isMobile = false }: BandProps) {
   };
 
   const { nodes, materials } = useGLTF(cardGLB) as any;
-  const bandTex = useTexture(lanyardURL);
+  const bandTex = useBandTexture();
   const cardTex = useCardTexture();
 
   const [curve] = useState(

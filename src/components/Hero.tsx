@@ -59,8 +59,7 @@ export default function Hero() {
         {/* Right Side — Holographic ProfileCard */}
         <div className="lg:col-span-6 relative flex items-center justify-center h-[500px] sm:h-[620px] lg:h-[80vh] w-full">
 
-          {/* Diagonal structural lines texture */}
-          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[90%] h-[80%] diagonal-lines rounded-2xl opacity-60 pointer-events-none" />
+          {/* Removed diagonal structural lines texture */}
 
           <Lanyard position={[0, 0, 12]} />
         </div>
