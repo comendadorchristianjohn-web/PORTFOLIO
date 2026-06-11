@@ -53,8 +53,8 @@ export default function Lanyard({
         gl={{ alpha: transparent }}
         onCreated={({ gl, camera }) => {
           gl.setClearColor(new THREE.Color(0x000000), transparent ? 0 : 1);
-          // Higher lookAt Y = content appears higher on screen
-          camera.lookAt(0, 3.8, 0);
+          // Card hangs at world y≈0; lookAt y=0.5 centers it in the viewport
+          camera.lookAt(0, 0.5, 0);
         }}
       >
         <ambientLight intensity={Math.PI} />
