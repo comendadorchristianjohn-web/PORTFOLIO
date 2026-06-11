@@ -25,6 +25,7 @@ export type DockProps = {
   baseItemSize?: number;
   magnification?: number;
   spring?: SpringOptions;
+  activeIndex?: number;
 };
 
 type DockItemProps = {
@@ -36,6 +37,7 @@ type DockItemProps = {
   distance: number;
   baseItemSize: number;
   magnification: number;
+  isActive?: boolean;
 };
 
 function DockItem({
@@ -46,7 +48,8 @@ function DockItem({
   spring,
   distance,
   magnification,
-  baseItemSize
+  baseItemSize,
+  isActive = false,
 }: DockItemProps) {
   const ref = useRef<HTMLDivElement>(null);
   const isHovered = useMotionValue(0);
@@ -72,17 +75,32 @@ function DockItem({
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
       onClick={onClick}
-      // items are bottom-aligned so they grow UPWARD only — no vertical shift
-      className={`relative flex-shrink-0 inline-flex items-center justify-center rounded-full bg-transparent hover:bg-black/5 transition-colors duration-150 cursor-pointer ${className}`}
+      className={`relative flex-shrink-0 inline-flex flex-col items-center justify-center rounded-full cursor-pointer transition-colors duration-150
+        ${isActive ? 'bg-black/8' : 'bg-transparent hover:bg-black/5'}
+        ${className}`}
       tabIndex={0}
       role="button"
       aria-haspopup="true"
     >
       {Children.map(children, child =>
         React.isValidElement(child)
-          ? cloneElement(child as React.ReactElement<{ isHovered?: MotionValue<number> }>, { isHovered })
+          ? cloneElement(child as React.ReactElement<{ isHovered?: MotionValue<number>; isActive?: boolean }>, { isHovered, isActive })
           : child
       )}
+
+      {/* Active dot indicator at bottom */}
+      <AnimatePresence>
+        {isActive && (
+          <motion.span
+            key="dot"
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+            className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-black"
+          />
+        )}
+      </AnimatePresence>
     </motion.div>
   );
 }
@@ -127,11 +145,12 @@ type DockIconProps = {
   className?: string;
   children: React.ReactNode;
   isHovered?: MotionValue<number>;
+  isActive?: boolean;
 };
 
-function DockIcon({ children, className = '' }: DockIconProps) {
+function DockIcon({ children, className = '', isActive }: DockIconProps) {
   return (
-    <div className={`flex items-center justify-center text-zinc-700 ${className}`}>
+    <div className={`flex items-center justify-center transition-colors duration-200 ${isActive ? 'text-black' : 'text-zinc-600'} ${className}`}>
       {children}
     </div>
   );
@@ -140,21 +159,19 @@ function DockIcon({ children, className = '' }: DockIconProps) {
 export default function Dock({
   items,
   className = '',
-  // Stiffer spring + high damping = snappy but NO jitter
   spring = { mass: 0.1, stiffness: 200, damping: 20 },
   magnification = 62,
   distance = 120,
   baseItemSize = 46,
+  activeIndex = 0,
 }: DockProps) {
   const mouseX = useMotionValue(Infinity);
 
   return (
-    // Fixed container — NO height animation so the pill never shifts vertically
     <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 flex items-end">
       <motion.div
         onMouseMove={({ pageX }) => mouseX.set(pageX)}
         onMouseLeave={() => mouseX.set(Infinity)}
-        // items-end keeps everything bottom-anchored; icons grow upward
         className={`${className} flex items-end w-fit gap-1.5 rounded-full border border-black/10 bg-white/85 backdrop-blur-xl shadow-[0_4px_24px_rgba(0,0,0,0.10)] py-2 px-3`}
         role="toolbar"
         aria-label="Application dock"
@@ -169,6 +186,7 @@ export default function Dock({
             distance={distance}
             magnification={magnification}
             baseItemSize={baseItemSize}
+            isActive={activeIndex === index}
           >
             <DockIcon>{item.icon}</DockIcon>
             <DockLabel>{item.label}</DockLabel>

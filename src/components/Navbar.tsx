@@ -143,6 +143,7 @@ export default function Navbar() {
             label: item.label,
             onClick: item.onClick,
           }))}
+          activeIndex={activeIndex}
           magnification={70}
           baseItemSize={48}
           distance={150}
