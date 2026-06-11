@@ -34,7 +34,7 @@ export default function Projects() {
       github: "",
       demo: "",
       image: "/autocad.png",
-      featured: true,
+      featured: false,
     },
     {
       title: "PC Part Configurator & Compatibility Engine",
