@@ -75,20 +75,27 @@ function DockItem({
       onFocus={() => isHovered.set(1)}
       onBlur={() => isHovered.set(0)}
       onClick={onClick}
-      className={`relative flex-shrink-0 inline-flex flex-col items-center justify-center rounded-full cursor-pointer transition-colors duration-150
-        ${isActive ? 'bg-black/8' : 'bg-transparent hover:bg-black/5'}
-        ${className}`}
+      className={`relative flex-shrink-0 inline-flex flex-col items-center justify-center rounded-full cursor-pointer hover:bg-black/5 transition-colors duration-150 ${className}`}
       tabIndex={0}
       role="button"
       aria-haspopup="true"
     >
+      {/* Sliding active background pill — shared layout animation */}
+      {isActive && (
+        <motion.div
+          layoutId="dock-active-pill"
+          className="absolute inset-0 rounded-full bg-black/8"
+          transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+        />
+      )}
+
       {Children.map(children, child =>
         React.isValidElement(child)
           ? cloneElement(child as React.ReactElement<{ isHovered?: MotionValue<number>; isActive?: boolean }>, { isHovered, isActive })
           : child
       )}
 
-      {/* Active dot indicator at bottom */}
+      {/* Active dot at bottom */}
       <AnimatePresence>
         {isActive && (
           <motion.span
@@ -97,7 +104,7 @@ function DockItem({
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0 }}
             transition={{ type: 'spring', stiffness: 400, damping: 20 }}
-            className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-black"
+            className="absolute bottom-1 left-1/2 -translate-x-1/2 w-1 h-1 rounded-full bg-black/50"
           />
         )}
       </AnimatePresence>
@@ -150,9 +157,13 @@ type DockIconProps = {
 
 function DockIcon({ children, className = '', isActive }: DockIconProps) {
   return (
-    <div className={`flex items-center justify-center transition-colors duration-200 ${isActive ? 'text-black' : 'text-zinc-600'} ${className}`}>
+    <motion.div
+      className={`relative z-10 flex items-center justify-center transition-colors duration-200 ${isActive ? 'text-black' : 'text-zinc-500'} ${className}`}
+      animate={{ scale: isActive ? 1.1 : 1 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 20 }}
+    >
       {children}
-    </div>
+    </motion.div>
   );
 }
 
