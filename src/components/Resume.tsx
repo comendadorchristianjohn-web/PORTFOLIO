@@ -59,8 +59,8 @@ export default function Resume() {
           <AnimatedContent distance={40} direction="vertical" reverse={false}>
             <div className="flex justify-center mt-8">
               <a
-                href="/resume1.png"
-                download="Christian_John_Comendador_Resume.png"
+                href="/resume.pdf"
+                download="Christian_John_Comendador_Resume.pdf"
                 className="px-8 py-4 bg-black text-white rounded-full font-semibold uppercase tracking-widest text-sm hover:bg-black/80 transition-colors shadow-lg hover:shadow-xl"
               >
                 Download Resume
