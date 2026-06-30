@@ -5,6 +5,7 @@ import Experience from "@/components/Experience";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Chatbot from "@/components/Chatbot";
+import Resume from "@/components/Resume";
 
 
 export default function Home() {
@@ -28,6 +29,11 @@ export default function Home() {
 
         {/* Project Showcase */}
         <Projects />
+
+        {/* Resume */}
+        <section id="resume">
+          <Resume />
+        </section>
 
         {/* Contact Form */}
         <Contact />

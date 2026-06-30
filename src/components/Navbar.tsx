@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Home, Cpu, Briefcase, FolderOpen, Mail } from "lucide-react";
+import { Menu, X, Home, Cpu, Briefcase, FolderOpen, Mail, FileText } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/icons";
 import Dock from "./Dock";
 
@@ -37,6 +37,13 @@ export default function Navbar() {
       label: "Projects",
       href: "#projects",
       onClick: () => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })
+    },
+    {
+      id: "resume",
+      icon: <FileText className="w-5 h-5" />,
+      label: "Resume",
+      href: "#resume",
+      onClick: () => document.getElementById("resume")?.scrollIntoView({ behavior: "smooth" })
     },
     {
       id: "contact",
@@ -145,8 +152,7 @@ export default function Navbar() {
             </button>
           </div>
 
-          {/* Mobile Navigation Icons */}
-          <ul className="grid grid-cols-5 gap-2.5 py-3 px-2 bg-white/5 border border-black/10 rounded-2xl">
+          <ul className="grid grid-cols-6 gap-2.5 py-3 px-2 bg-white/5 border border-black/10 rounded-2xl">
             {navItems.map((item, index) => (
               <li key={index} className="flex justify-center">
                 <button
